@@ -3,7 +3,7 @@ import axios from "axios";
 import Image from "next/image";
 import { ChangeEvent, useEffect, useState } from "react";
 import { emotionConfig } from "./config";
-import { ColorRing } from "react-loader-spinner";
+import { ColorRing, Rings } from "react-loader-spinner";
 
 export default function Home() {
   const defaultColor = "#cccccc";
@@ -93,14 +93,14 @@ export default function Home() {
 
   function renderLoader() {
     return (
-      <ColorRing
+      <Rings
         visible={true}
         height="80"
         width="80"
-        ariaLabel="color-ring-loading"
+        color="#4fa94d"
+        ariaLabel="rings-loading"
         wrapperStyle={{}}
-        wrapperClass="color-ring-wrapper"
-        colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+        wrapperClass=""
       />
     );
   }
