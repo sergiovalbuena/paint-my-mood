@@ -1,4 +1,5 @@
 'use client'
+import axios from "axios";
 import Image from "next/image";
 import { ChangeEvent, useEffect, useState } from "react";
 
@@ -18,11 +19,12 @@ useEffect(() => {
   return () => clearTimeout(inputTimeout);
 }, [input]);
 
-function runPredicitons() {
+async function runPredicitons() {
   if(input){
     setLoading(true);
   //send api call
-
+const res = await axios.post('api/emotion', {input: input})
+console.log(res);
     setLoading(false);
 
   }
